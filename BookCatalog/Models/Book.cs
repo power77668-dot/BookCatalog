@@ -1,4 +1,4 @@
-п»їusing System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookCatalog.Models;
 
@@ -6,34 +6,34 @@ public class Book
 {
     public int Id { get; set; }
 
-    [Required(ErrorMessage = "РќР°Р·РІР°РЅРёРµ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ")]
-    [StringLength(200, ErrorMessage = "РњР°РєСЃРёРјСѓРј 200 СЃРёРјРІРѕР»РѕРІ")]
-    [Display(Name = "РќР°Р·РІР°РЅРёРµ")]
+    [Required(ErrorMessage = "Название обязательно")]
+    [StringLength(200, ErrorMessage = "Максимум 200 символов")]
+    [Display(Name = "Название")]
     public string Title { get; set; } = string.Empty;
 
-    [Required(ErrorMessage = "РђРІС‚РѕСЂ РѕР±СЏР·Р°С‚РµР»РµРЅ")]
+    [Required(ErrorMessage = "Автор обязателен")]
     [StringLength(100)]
-    [Display(Name = "РђРІС‚РѕСЂ")]
+    [Display(Name = "Автор")]
     public string Author { get; set; } = string.Empty;
 
-    [Required(ErrorMessage = "Р–Р°РЅСЂ РѕР±СЏР·Р°С‚РµР»РµРЅ")]
+    [Required(ErrorMessage = "Жанр обязателен")]
     [StringLength(50)]
-    [Display(Name = "Р–Р°РЅСЂ")]
+    [Display(Name = "Жанр")]
     public string Genre { get; set; } = string.Empty;
 
-    [Range(1, 3000, ErrorMessage = "Р“РѕРґ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РѕС‚ 1 РґРѕ 3000")]
-    [Display(Name = "Р“РѕРґ РёР·РґР°РЅРёСЏ")]
+    [Range(1, 3000, ErrorMessage = "Год должен быть от 1 до 3000")]
+    [Display(Name = "Год издания")]
     public int Year { get; set; }
 
-    [Range(0, 100000, ErrorMessage = "Р¦РµРЅР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№")]
-    [Display(Name = "Р¦РµРЅР°")]
+    [Range(0, 100000, ErrorMessage = "Цена должна быть положительной")]
+    [Display(Name = "Цена")]
     public decimal Price { get; set; }
 
     [StringLength(2000)]
-    [Display(Name = "РћРїРёСЃР°РЅРёРµ")]
+    [Display(Name = "Описание")]
     public string? Description { get; set; }
 
-    [Url(ErrorMessage = "Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Р№ URL")]
-    [Display(Name = "URL РѕР±Р»РѕР¶РєРё")]
+    [Url(ErrorMessage = "Введите корректный URL")]
+    [Display(Name = "URL обложки")]
     public string? CoverUrl { get; set; }
 }

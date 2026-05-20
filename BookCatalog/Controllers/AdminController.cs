@@ -1,4 +1,4 @@
-п»їusing BookCatalog.Data;
+using BookCatalog.Data;
 using BookCatalog.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -30,7 +30,7 @@ public class AdminController : Controller
 
         _db.Books.Add(book);
         await _db.SaveChangesAsync();
-        TempData["Message"] = "РљРЅРёРіР° РґРѕР±Р°РІР»РµРЅР°";
+        TempData["Message"] = "Книга добавлена";
         return RedirectToAction(nameof(Index));
     }
 
@@ -54,7 +54,7 @@ public class AdminController : Controller
         {
             _db.Update(book);
             await _db.SaveChangesAsync();
-            TempData["Message"] = "РР·РјРµРЅРµРЅРёСЏ СЃРѕС…СЂР°РЅРµРЅС‹";
+            TempData["Message"] = "Изменения сохранены";
         }
         catch (DbUpdateConcurrencyException)
         {
@@ -82,7 +82,7 @@ public class AdminController : Controller
         {
             _db.Books.Remove(book);
             await _db.SaveChangesAsync();
-            TempData["Message"] = "РљРЅРёРіР° СѓРґР°Р»РµРЅР°";
+            TempData["Message"] = "Книга удалена";
         }
         return RedirectToAction(nameof(Index));
     }

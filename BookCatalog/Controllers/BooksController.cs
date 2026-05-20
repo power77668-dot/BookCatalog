@@ -1,4 +1,4 @@
-п»їusing BookCatalog.Data;
+using BookCatalog.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,7 +10,7 @@ public class BooksController : Controller
 
     public BooksController(AppDbContext db) => _db = db;
 
-    // GET: /Books  (РіР»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р° СЃРѕ СЃРїРёСЃРєРѕРј РєР°СЂС‚РѕС‡РµРє)
+    // GET: /Books  (главная страница со списком карточек)
     public async Task<IActionResult> Index()
     {
         var books = await _db.Books.OrderBy(b => b.Title).ToListAsync();
